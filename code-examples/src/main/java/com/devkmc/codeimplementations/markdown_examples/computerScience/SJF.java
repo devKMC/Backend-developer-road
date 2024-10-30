@@ -15,11 +15,12 @@ class Process {
     }
 }
 
-// PS 스케줄링 클래스
-public class PS {   
+// SJF 스케줄링 클래스
+public class SJF {
     private List<Process> processList;
+
     // 리스트 초기화
-    public PS() {
+    public SJF() {
         processList = new ArrayList<>();
     }
 
@@ -28,12 +29,12 @@ public class PS {
         processList.add(new Process(id, burstTime));
     }
 
-    // PS 스케줄링 알고리즘 실행
+    // SJF 스케줄링 알고리즘 실행
     public void schedule() {
         int currentTime = 0; // 현재 시간
         System.out.println("Process ID\tBurst Time\tCompletion Time\tWaiting Time\tTurnaround Time");
 
-        // 프로세스 실행 시간 기준으로 정렬
+        // 프로세스를 실행 시간 기준으로 정렬
         processList.sort(Comparator.comparingInt(process -> process.burstTime));
 
         // 모든 프로세스를 처리
@@ -51,17 +52,14 @@ public class PS {
     }
 
     public static void main(String[] args) {
-
-        // 클래스이름 / 변수 = 객체생성();
-        // PS 클래스의 새로운 객체를 만들어서 그 객체를 scheduler라는 변수에 저장한다.
-        PS scheduler = new PS();
+        SJF scheduler = new SJF();
         // 프로세스 추가 (ID, 실행 시간)
         scheduler.addProcess("1", 8);
         scheduler.addProcess("2", 4);
         scheduler.addProcess("3", 9);
         scheduler.addProcess("4", 5);
 
-        // PS 스케줄링 실행
+        // SJF 스케줄링 실행
         scheduler.schedule();
     }
 }
