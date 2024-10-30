@@ -1,3 +1,5 @@
+### 코드 실습 경로 : code-examples/src/main/java/com/devkmc/codeimplementations/markdown_examples/computerScience 
+
 # <span style="color: #4682B4;">프로세스와 스레드 정의</span>
 
 ## <span style="color: #4682B4;">1. 프로세스 (Process)</span>
